@@ -1,0 +1,11 @@
+<container xmlns="http://symfony.com/schema/dic/services">
+    <services>
+        <service class="Akki\SyliusSettableChannelPlugin\Context\SettableChannelContext"
+                 id="akki_sylius_settable_channel_plugin.context.settable_channel_context">
+            <tag name="sylius.context.channel" priority="250"/>
+        </service>
+
+        <service id="Akki\SyliusSettableChannelPlugin\Context\SettableChannelContextInterface"
+                 alias="akki_sylius_settable_channel_plugin.context.settable_channel_context"/>
+    </services>
+</container>
