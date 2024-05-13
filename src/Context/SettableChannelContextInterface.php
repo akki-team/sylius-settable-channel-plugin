@@ -11,5 +11,7 @@ interface SettableChannelContextInterface extends ChannelContextInterface
 {
     public function setChannel(ChannelInterface|null $channel): void;
 
+    public function setChannelByCode(string $channelCode): void;
+
     public function reset(): void;
 }
