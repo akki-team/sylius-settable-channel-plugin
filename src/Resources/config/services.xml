@@ -2,6 +2,7 @@
     <services>
         <service class="Akki\SyliusSettableChannelPlugin\Context\SettableChannelContext"
                  id="akki_sylius_settable_channel_plugin.context.settable_channel_context">
+            <argument type="service" id="sylius.repository.channel"/>
             <tag name="sylius.context.channel" priority="250"/>
         </service>
 
