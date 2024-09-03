@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Akki\SyliusSettableChannelPlugin\Context;
 
+use Sylius\Component\Channel\Context\ChannelContextInterface;
 use Sylius\Component\Channel\Context\ChannelNotFoundException;
 use Sylius\Component\Channel\Model\ChannelInterface;
 use Sylius\Component\Channel\Repository\ChannelRepositoryInterface;
@@ -13,6 +14,7 @@ final class SettableChannelContext implements SettableChannelContextInterface
     private ChannelInterface|null $channel;
 
     public function __construct(
+        private readonly ChannelContextInterface    $decorated,
         private readonly ChannelRepositoryInterface $channelRepository
     )
     {
@@ -22,7 +24,7 @@ final class SettableChannelContext implements SettableChannelContextInterface
     public function getChannel(): ChannelInterface
     {
         if (null === $this->channel) {
-            throw new ChannelNotFoundException();
+            return $this->decorated->getChannel();
         }
 
         return $this->channel;
