@@ -12,7 +12,7 @@ Very useful in your symfony commands where channel context cannot be determined 
 
 1. Install the plugin to your project with the following command:
 ```bash
-$ composer require akki/sylius-channel-segmentation-plugin
+$ composer require akki/sylius-settable-channel-plugin
 ```
 
 2. After the installation, check that the plugin is correctly declared in your project in the file `config/bundles.php`.
